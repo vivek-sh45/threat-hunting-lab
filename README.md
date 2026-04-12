@@ -1,24 +1,56 @@
 # Threat Hunting Lab
 
-## Objective
-Perform threat hunting using network traffic analysis to identify suspicious activity and possible attacker communication.
+## Overview
+This project demonstrates a basic threat hunting investigation using network traffic analysis. The objective is to identify suspicious activity and possible attacker communication within captured network traffic.
 
 ## Tools Used
-Wireshark
+- Wireshark
+- PCAP Network Dataset
+- Packet Analysis
 
-## Investigation Steps
+## Investigation Methodology
 
-1. Opened PCAP file in Wireshark
-2. Investigated DNS queries
-3. Analyzed HTTP traffic
-4. Identified suspicious IP addresses
+### 1. DNS Traffic Analysis
+Filtered DNS queries to identify suspicious domain names and repeated DNS requests.
 
-## Indicators of Compromise
+Wireshark Filter
+dns
 
-- Suspicious IP communication
-- Repeated DNS queries
-- Possible command and control traffic
+### 2. HTTP Traffic Analysis
+Analyzed HTTP requests to detect unusual web traffic and potential malicious downloads.
+
+Wireshark Filter
+http
+
+### 3. Suspicious IP Investigation
+Identified external IP addresses communicating frequently with the host.
+
+Wireshark Filter
+ip.addr
+
+### 4. Network Conversation Analysis
+Reviewed TCP streams to observe communication patterns between hosts.
+
+Wireshark Filter
+tcp.stream
+
+## Indicators of Compromise (IOC)
+
+Example indicators discovered during analysis:
+
+- Suspicious IP Address
+- Repeated DNS Queries
+- Possible command-and-control communication
+
+## Findings
+
+The analysis revealed abnormal network communication patterns including repeated DNS queries and connections to unknown external IP addresses which may indicate malicious activity.
 
 ## Conclusion
 
-Threat hunting helped identify abnormal network behavior that could indicate potential malware or attacker activity.
+Threat hunting techniques using network traffic analysis can help identify potential malware communication and suspicious activity within a network.
+
+## Author
+
+Vivek Sharma  
+Cybersecurity Enthusiast
